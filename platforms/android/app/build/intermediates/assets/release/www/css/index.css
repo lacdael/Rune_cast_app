@@ -1,0 +1,186 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+	-webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+	box-sizing: border-box;
+}
+
+html {height: 100%;}
+
+body {
+	-webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+	-webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+	-webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+	background-color:#E4E4E4;
+	font-family:Gill Sans, sans-serif;
+	font-size:12px;
+	height:100%;
+	margin:0px;
+	padding:0px;
+	width:100%;
+}
+
+#btn {
+	cursor: pointer;
+	border: 1px solid;
+	margin: 1em;
+	font-size: 1.5em;
+	display: inline-block;
+	position: absolute;
+	background: rgba(255,255,255,0.8);
+	padding: 0.6em 0.8em;
+	z-index:500;
+	color: white;
+	background: rgba(42,42,42,0.7);
+}
+
+#background {
+	margin: auto;
+	top: 0;
+	position: fixed;
+	width: 80%;
+	left: 10%;
+	height: 100%;
+	opacity: 0.2;
+	z-index: 0;
+}
+
+.rune {
+	cursor: pointer;
+	border: 1px solid;
+	position: absolute;
+	background-image: url('../img/stone_white.jpg');
+	box-shadow:0 0 10px 0 #000;
+	z-index:1;
+	width:5em;
+	border-bottom:groove 4px;
+}
+
+.rune:target {box-shadow:0 0 20px 0 #000;}
+
+.modal {
+width:100%;
+background: rgba(0,0,0,0.5);
+	    z-index: 1000;
+position: absolute;
+height: 100vh;
+padding: 10%;
+}
+
+.modal> #txt{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+background: rgba(255,255,255,0.9);
+width: 80%;
+       box-shadow:0 0 20px 0 #000;
+}
+
+
+#rune img {
+height: 50%;
+opacity:0.9;
+display: block;
+margin: auto;
+}
+
+#canvas {overflow:hidden;}
+
+#rune {
+	padding-top:20%;
+}
+
+#rune #txt {
+background: rgba(255,255,255,0.3);
+margin: 1em;
+padding: 0.1em;
+	 box-shadow: inset 0 0 5px 0 #fff;
+bottom: 0;
+position: absolute;
+left: 0;
+right: 0;
+
+}
+
+#rune img.reversed {
+	-webkit-transform: rotateX(180deg);
+transform: rotate(180deg);
+}
+
+
+/* Portrait layout (default) */
+.app {
+	/* offset horizontal: half of text area width */
+	background-image:url("../img/stone.jpg");
+	background-size:50%;
+height:100%;
+height: -webkit-fill-available;
+height: 100vh;
+}
+
+p {
+
+	font-size: 3em;
+	text-align: center;
+opacity: 0.9;
+margin:0.2em;
+}
+
+h1 {
+	font-size:5em;
+	font-weight:bolder;
+margin:0px;
+opacity:0.9;
+overflow:visible;
+padding:0px;
+	text-align:center;
+}
+
+h3  {
+	font-size: 2.5em;
+	font-weight: inherit;
+margin: 0px;
+opacity: 0.9;
+	 text-align: center;
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+	.app {
+	}
+
+	.modal> #txt{
+width:60%;
+	}
+#rune {
+	padding-top:0;
+height:100vh;
+}
+#rune #txt {
+left:50%;
+top:0;
+}
+#rune img {
+width:50%;
+height:100%;
+margin: initial;
+}
+
+}
