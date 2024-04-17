@@ -1,0 +1,11 @@
+  <svg>
+	<defs>
+            <filter id="neon" >
+              <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blurred"></feGaussianBlur>
+              <feMerge>
+		<feMergeNode in="blurred" ></feMergeNode>
+		<feMergeNode in="blurred" ></feMergeNode>        
+              </feMerge>
+            </filter>
+	</defs>
+</svg>

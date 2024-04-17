@@ -1,4 +1,0 @@
-#Mon Jan 14 09:24:22 GMT 2019
-base.0=/home/christian/Documents/APPS/runes/platforms/android/app/build/intermediates/transforms/dex/release/0
-path.0=classes.dex
-renamed.0=classes.dex
