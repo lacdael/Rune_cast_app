@@ -37,6 +37,9 @@ jobs:
       - name: Verify generated site
         run: test -f public/index.html
 
+      - name: Verify bindrune generator route
+        run: test -f public/bindrune_generator/index.html
+
       - name: Publish public directory to pages branch
         uses: peaceiris/actions-gh-pages@v4
         with:
