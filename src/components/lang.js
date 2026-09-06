@@ -40,6 +40,9 @@ const STRINGS = {
 	"rune_spread":{
 		"en":"Rune Spread"
 	},
+	"bindrune_generator":{
+		"en":"Bindrune Generator"
+	},
 	"REVERSED":{"en":"Reversed"},
 	"F_NAME":{"en": "Feoh"},
 	"F_RIGHT":{"en": "Money, wealth, luck, abundance."},
@@ -68,8 +71,8 @@ const STRINGS = {
 	"H_RIGHT" :{"en": "Hailstrom, loss, destruction, change."},
 	"H_REVERSED" :{"en": "Catastrophe, loss, sickness, hardship, pain."},
 	"N_NAME" : {"en":"Nyd"},
-	"N_RIGHT" : {"en":"Need, necessity, hardship, delays."},
-	"N_REVERSED" :{"en":"Drudgery, laxity, restlessness."},
+	"N_RIGHT" : {"en":"Need, distress, constraint, endurance."},
+	"N_REVERSED" :{"en":"Restriction, hardship, drudgery, blocked effort."},
 	"I_NAME" : {"en":"Is"},
 	"I_RIGHT" : {"en":"Ice, standstill, block, challenge."},
 	"J_NAME" :{"en": "Jer"},

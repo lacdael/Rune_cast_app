@@ -27,7 +27,7 @@ import { Link } from "gatsby"
 
 
 const drawerWidth = 240;
-const navItems = ['runes', 'rune_cast', 'rune_spread','about'];
+const navItems = ['runes', 'rune_cast', 'rune_spread', 'bindrune_generator', 'about'];
 
 const themeOptions = {
   palette: {
@@ -149,4 +149,3 @@ function Layout(props) {
 }
 
 export default Layout;
-

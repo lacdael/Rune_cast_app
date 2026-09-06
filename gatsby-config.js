@@ -2,9 +2,10 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  pathPrefix: `/Rune_cast_app`,
   siteMetadata: {
     title: `Runes`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://lacdael.github.io/Rune_cast_app`
   },
   plugins: ["gatsby-plugin-image", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
