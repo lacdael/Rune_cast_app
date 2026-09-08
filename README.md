@@ -1,3 +1,4 @@
+
 Rune Cast is an exploration of the Anglo-Saxon futhorc: a small web application for studying rune meanings, casting spreads, and combining individual runes into bindrunes. The project sits between a reference book and a visual experiment. The runes are most useful when they can be read as both language and shape, so the application keeps those two sides together.
 
 # Rune casting

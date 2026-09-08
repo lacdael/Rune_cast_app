@@ -11,175 +11,537 @@ import Select from '@mui/material/Select';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
+
+const _FEOH = `
+       #   #
+       #  #
+       # #   
+       ##
+       #
+       #     
+       #   #
+       #  #
+       # #   
+       ##
+       #
+       #     
+       #
+       #
+       #     
+       #
+       #
+       #    
+       #
+       #
+       #    
+`;
+const _OS = `
+       #   
+       #  
+       ##   
+       # #    #
+       #  #  #
+       #   ##     
+       #         
+       #         
+       ## 
+       # #    #  
+       #  #  #    
+       #   ##  
+       #
+       #
+       #     
+       #
+       #
+       #    
+       #
+       #
+       #    
+`;
+
+const _RAD = `
+
+    #  
+    ##
+    # #          
+    #  #         
+    #   #         
+    #    #       
+    #     #       
+    #      #      
+    #      #     
+    #     #     
+    #    #    
+    #   #  
+    #  #
+    # # 
+    # #
+    #  #
+    #   #  
+    #    #
+    #     #
+    #      #
+`;
+
+//1  2  3  4  5  6
+const _CEN = `
+
+    #  
+    #                     
+    #           
+    #           
+    #            
+    #           
+    #            
+    #            
+    #            
+    #           
+    #         
+    #      
+    #   
+    ## 
+    # #
+    #  #
+    #   #  
+    #    #
+    #     #
+    #      #
+`;
+
+const _UR = `
+
+ #  
+ ##                     
+ # #          
+ #  #         
+ #   #         
+ #    #       
+ #     #       
+ #      #      
+ #       #     
+ #        #     
+ #         #    
+ #          #  
+ #           #
+ #           # 
+ #           #
+ #           #
+ #           #  
+ #           #
+ #           #
+ #           #
+`;
+
+const _G = `
+#                   #
+ #                 #    
+  #               #
+   #             #
+    #           #
+     #         #
+      #       #
+       #     #
+        #   #
+         # #
+          #  
+         # #
+        #   #
+       #     #	
+      #       # 
+     #         #       
+    #           #      
+   #             #
+  #               #     
+ #                 #    
+#                   #
+`;
+
+const _W = `
+
+    #  
+    ##
+    # #          
+    #  #         
+    #   #         
+    #    #       
+    #     #       
+    #      #      
+    #      #     
+    #     #     
+    #    #    
+    #   #  
+    #  #
+    # # 
+    # 
+    #  
+    #    
+    #    
+    #     
+    #      
+`;
+const _H = `
+ #           #               
+ #           #          
+ #           #         
+ #           #         
+ #           #       
+ ##          #       
+ # #         #      
+ #  #        #     
+ #   #       #     
+ #    #      #    
+ #     #     #  
+ #      #    #
+ #       #   # 
+ #        #  #
+ #         # #
+ #          ##  
+ #           #
+ #           #
+ #           #
+ #           #
+ #           #
+`;
+
+const _N = `
+       #
+       #
+       #
+       #
+       #
+       #
+   #   #                          
+    #  #                     
+     # #                    
+      ##                    
+       #                  
+       ##                 
+       # #               
+       #  #             
+       #   #  
+       #
+       #
+       #
+       #
+       #
+       #
+`;
+const _I = `
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+`;
+
+const _J = `
+       #
+       #
+       #
+       #
+       #
+       #
+   #   #   #                       
+    #  #  #                   
+     # # #                   
+      ###                    
+       #                  
+      ###                 
+     # # #               
+    #  #  #             
+   #   #   #  
+       #
+       #
+       #
+       #
+       #
+       #
+`;
+
+const _IW = `
+       
+       #
+       ##
+       # #
+       #  #
+       #   #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+   #   #
+    #  #
+     # #
+      ##
+       #
+       
+`;
+
+
+const _P = `
+                 #
+       #        #
+       ##      #
+       # #    #
+       #  #  #
+       #   ##
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #   ##
+       #  #  #
+       # #    #
+       ##      #
+       #        #
+                 #
+`;
+const _X = `
+#      #      #
+ #     #     #
+  #    #    #
+   #   #   #
+    #  #  #
+     # # #  
+      ###
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+       #
+`;
+const _S = `
+ #
+ #
+ #
+ #
+ #
+ #
+ #      #                 
+ #     ##              
+ #    # #
+ #   #  #              
+ #  #   #             
+ # #    #                 
+ ##     #               
+ #      #             
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+`;
+const _T = `
+       
+        #
+       ###
+      # # #
+     #  #  #
+    #   #   #
+   #    #    #
+  #     #     #
+ #      #      #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+`;
+const _B = `
+ 
+ #
+ ##
+ # #
+ #  #
+ #   #
+ #    #                  
+ #     #              
+ #    #
+ #   #                
+ #  #                
+ #   #                     
+ #    #               
+ #     #             
+ #    #
+ #   #
+ #  #
+ # #
+ ##
+ #
+        
+`;
+
+const _E = `
+ 
+ #              #
+ ##            ##
+ # #          # #  
+ #  #        #  #
+ #   #      #   #
+ #    #    #    #           
+ #     #  #     #         
+ #      ##      #
+ #              #                
+ #              #                
+ #              #                     
+ #              #               
+ #              #             
+ #              #
+ #              #
+ #              #
+ #              #
+ #              #
+ #              #
+ #              #
+`;
+const _M = `
+ 
+ #           #
+ ##         ## 
+ # #       # #  
+ #  #     #  #
+ #   #   #   #
+ #    # #    #           
+ #     #     #         
+ #    # #    #
+ #   #   #   # 
+ #  #     #  #                
+ # #       # #                
+ ##         ##
+ #           #               
+ #           #             
+ #           # 
+ #           #
+ #           #
+ #           # 
+ #           #
+ #           #
+`;
+const _L = `
+ 
+ #              
+ ##             
+ # #             
+ #  #         
+ #   #       
+ #    #              
+ #     #             
+ #      # 
+ #                      
+ #                     
+ #    
+ #                  
+ #               
+ # 
+ #
+ #
+ #
+ #
+ #
+ #
+`;
+
+const _ING = `
+ 
+ #        #      
+ ##      ##        
+ # #    # #         
+ #  #  #  #      
+ #   ##   #
+ #   ##   #            
+ #  #  #  #            
+ # #    # # 
+ ##      ##                
+ #        #             
+ ##      ##
+ # #    # #            
+ #  #  #  #        
+ #   ##   #
+ #   ##   #
+ #  #  #  #
+ # #    # #
+ ##      ##
+ #        #
+ 
+`;
+
+
 const DEFINITIONS = {
-  F: ['Feoh', `
-  | /
-  |/
-  | /
-  |/
-  |
-  |
-`],
-  U: ['Ur', `
-|\\
-| \\
-|  \\
-|   \\
-|    \\
-|     \\
- `],
-  O: ['Os', `
-  |  /
-  |\\/
-  |  /
-  |\\/
-  |
-  |
-`],
-  R: ['Rad', `
- |\\
- | \\
- | /
- |/  
- |\\
- | \\
-`],
-  C: ['Cen', `
-  |
-  |
-  |
-  |\\
-  | \\
-  |  \\
-`],
-  G: ['Gyfu', `
- \\    /
-  \\  /
-   \\/
-   /\\
-  /  \\
- /    \\
-`],
-  W: ['Wynn', `
-|\\  
-| \\
-| /
-|/
-|
-|
-`],
-  H: ['Haegl', `
-|  |
-|  |
-|\\ |
-| \\|
-|  |
-|  |
-`],
-  N: ['Nyd', `
-  |
-  |
- \\|
-  |\\
-  |
-  |
-`],
-  I: ['Is', `
-  |
-  |
-  |
-  |
-  |
-  |
-`],
-J: ['Gaer', `
-  |
-  |
- \\|/
- /|\\
-  |
-  |
-`],
-IH: ['Ih', `
-  |\\
-  | \\
-  |
-  |
-\\ |
- \\|
-`],
-P: ['Peord', `
-  |\\/
-  | 
-  |
-  |
-  |
-/\\|
-`],
-X: ['Ilcs', `
-\\ | /
- \\|/ 
-  |
-  |
-  |
-  |
-`],
-S: ['Sygil', `
-|
-|
-| /| 
-|/ |
-   |
-   |
-`],
-T: ['Tiw', `
-  /|\\
- / | \\
-   | 
-   |
-   |
-   |
-`],
-B: ['Berc', `
- |\\
- | \\
- | / 
- | \\
- | /
- |/ 
-`],
-E: ['Eh', `
-|\\  /|
-| \\/ |
-|    |
-|    |
-|    |
-|    |
-`],
-M: ['Mon', `
-|\\  /|
-| \\/ |
-| /\\ |
-|/  \\|
-|    |
-|    |
-`],
-L: ['Lagu', `
-|\\ 
-| \\
-| 
-|
-|
-|
-`],
-ING: ['Ing', `
-|\\ /|
-| X |
-|/ \\|
-|\\ /| 
-| X |
-|/ \\|
-`],
+  F: ['Feoh', _FEOH ],
+  U: ['Ur', _UR ],
+  OS: ['Os', _OS ],
+  R: ['Rad', _RAD ],
+  C: ['Cen', _CEN ],
+  G: ['Gyfu', _G ],
+  W: ['Wynn', _W ],
+  H: ['Haegl', _H ],
+  N: ['Nyd', _N ],
+  I: ['Is', _I ],
+  J: ['Jer', _J ],
+  IW: ['Eeoh', _IW ],
+  P:['Peorth', _P ],
+  X: ['Ilcs', _X],
+  S: ['Sygil', _S],
+  T: ['Tiw', _T],
+  B: ['Berc', _B ],
+  E: ['Eh', _E ],
+  M: ['Mon', _M ],
+  L: ['Lagu', _L ],
+  ING: ['Ing', _ING ],
+
+
+
+};
+
+
+
+
+const DEFINITIONS_old = {
+
 AE: ['Oedil', `
  /\\
 /  \\
@@ -242,9 +604,18 @@ function marksFromAscii(art) {
       if (!/\s/.test(char)) marks.push([x, y, char]);
     });
   });
-  const minX = Math.min(...marks.map(([x]) => x));
-  const minY = Math.min(...marks.map(([, y]) => y));
+  const componentGrid = marks.every(([, , char]) => char === '#');
+  const minX = componentGrid ? Math.floor(Math.min(...marks.map(([x]) => x)) / 3) * 3 : Math.min(...marks.map(([x]) => x));
+  const minY = componentGrid ? Math.floor(Math.min(...marks.map(([, y]) => y)) / 3) * 3 : Math.min(...marks.map(([, y]) => y));
   return marks.map(([x, y, char]) => [x - minX, y - minY, char]);
+}
+
+function rotateComponentMarks(marks, turns) {
+  let result = marks.map((mark) => [...mark]);
+  for (let i = 0; i < turns % 4; i += 1) {
+    result = result.map(([x, y, char]) => [20 - y, x, char]);
+  }
+  return result;
 }
 
 function rotate(marks, turns) {
@@ -301,9 +672,66 @@ function vertices(marks) {
 }
 
 function cellKey([x, y]) { return `${x},${y}`; }
-function placedMarks(marks, offset, rotation) { return rotate(marks, rotation / 90).map(([x, y, char]) => [x + offset[0], y + offset[1], char]); }
+function placedMarks(marks, offset, rotation) {
+  const componentGrid = marks.every(([, , char]) => char === '#');
+  const rotated = componentGrid ? rotateComponentMarks(marks, rotation / 90) : rotate(marks, rotation / 90);
+  return rotated.map(([x, y, char]) => [x + offset[0], y + offset[1], char]);
+}
+function componentSegments(marks) {
+  const points = marks.filter(([, , char]) => char === '#');
+  const groups = new Map();
+  points.forEach(([x, y]) => {
+    const key = `${Math.floor(x / 3)},${Math.floor(y / 3)}`;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push([x, y]);
+  });
+
+  return [...groups.values()].flatMap((group) => componentTileSegments(group));
+}
+
+function componentTileSegments(points) {
+  // A component definition always contains the centre and at least two
+  // connected rays. Partial masks can appear where a rotated rune crosses a
+  // component boundary; they are not standalone components and must not
+  // produce a stray short line.
+  if (points.length < 3) return [];
+
+  const originX = Math.floor(points[0][0] / 3) * 3;
+  const originY = Math.floor(points[0][1] / 3) * 3;
+  const center = [originX + 1, originY + 1];
+  const centerKey = cellKey(center);
+
+  // Every occupied outer cell is a ray from the component's centre. This is
+  // the component definition in bindruneGenerator.md and deliberately avoids
+  // joining neighbouring outer cells into triangles or other polygons.
+  const rays = points
+    .filter(([x, y]) => cellKey([x, y]) !== centerKey)
+    .map(([x, y]) => [x, y]);
+  const groups = new Map();
+  rays.forEach(([x, y]) => {
+    const dx = x - center[0];
+    const dy = y - center[1];
+    const orientation = dx === 0 ? 'vertical' : dy === 0 ? 'horizontal' : dx === dy ? 'diagonal' : 'anti-diagonal';
+    if (!groups.has(orientation)) groups.set(orientation, []);
+    groups.get(orientation).push([x, y]);
+  });
+
+  return [...groups.values()].map((group) => {
+    if (group.length === 1) return extendSegment([center[0], center[1], group[0][0], group[0][1]]);
+    const ordered = group.slice().sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+    return extendSegment([ordered[0][0], ordered[0][1], ordered[ordered.length - 1][0], ordered[ordered.length - 1][1]]);
+  });
+}
+
+function extendSegment([x1, y1, x2, y2], amount = 0.08) {
+  const length = Math.hypot(x2 - x1, y2 - y1);
+  const dx = ((x2 - x1) / length) * amount;
+  const dy = ((y2 - y1) / length) * amount;
+  return [x1 - dx, y1 - dy, x2 + dx, y2 + dy];
+}
 function markSegments(x, y, char) {
   const half = 0.5;
+  if (char === '#') return [];
   if (char === '|') return [[x, y - half, x, y + half]];
   if (char === '-') return [[x - half, y, x + half, y]];
   if (char === '/') return [[x - half, y + half, x + half, y - half]];
@@ -328,9 +756,37 @@ function connected(cells) {
   return seen.size === cells.length;
 }
 
+function generateComponentBindrunes(firstMarks, secondMarks) {
+  const result = [];
+  const rotatedMarks = (rotation) => rotateComponentMarks(secondMarks, rotation / 90);
+
+  [0, 90, 180, 270].forEach((rotation) => {
+    const rotated = rotatedMarks(rotation);
+    rotated.forEach(([x, y]) => firstMarks.forEach(([firstX, firstY]) => {
+      const offset = [
+        3 * (Math.floor(firstX / 3) - Math.floor(x / 3)),
+        3 * (Math.floor(firstY / 3) - Math.floor(y / 3)),
+      ];
+      const secondPlaced = rotated.map(([cellX, cellY, char]) => [cellX + offset[0], cellY + offset[1], char]);
+      const firstCells = firstMarks.map(([cellX, cellY]) => [cellX, cellY]);
+      const secondCells = secondPlaced.map(([cellX, cellY]) => [cellX, cellY]);
+      const overlap = firstCells.filter((cell) => secondCells.some((other) => cellKey(cell) === cellKey(other))).length;
+      const union = [...new Map([...firstCells, ...secondCells].map((cell) => [cellKey(cell), cell])).values()];
+      if (!overlap || !connected(union)) return;
+      const key = `${rotation}:${union.map(cellKey).sort().join('|')}`;
+      if (!result.some((item) => item.key === key)) result.push({ key, firstMarks, secondMarks, offset, rotation, overlap });
+    }));
+  });
+
+  return result.sort((a, b) => b.overlap - a.overlap || a.rotation - b.rotation).slice(0, 18);
+}
+
 function generate(first, second) {
   const firstMarks = marksFromAscii(DEFINITIONS[first][1]);
   const secondMarks = marksFromAscii(DEFINITIONS[second][1]);
+  if ([...firstMarks, ...secondMarks].every(([, , char]) => char === '#')) {
+    return generateComponentBindrunes(firstMarks, secondMarks);
+  }
   const firstVertices = vertices(firstMarks);
   const result = [];
   [0, 90, 180, 270].forEach((rotation) => {
@@ -424,7 +880,20 @@ function RunePreview_new({ placements }) {
 
 
 function RunePreview({ placements }) {
-  const lines = placements.flatMap(({ marks, offset, rotation }) => placedMarks(marks, offset, rotation)).flatMap(([x, y, char], index) => markSegments(x, y, char).map(([x1, y1, x2, y2], segment) => ({
+  const placed = placements.flatMap(({ marks, offset, rotation }) => placedMarks(marks, offset, rotation));
+  const componentLines = placements.every(({ marks }) => marks.every(([, , char]) => char === '#'))
+    ? placements.flatMap(({ marks, offset, rotation }) => componentSegments(placedMarks(marks, offset, rotation))).map(([x1, y1, x2, y2], index) => ({
+      key: `component-${index}`,
+      x1,
+      y1,
+      x2,
+      y2,
+      stroke: 'currentColor',
+      strokeWidth: 0.13,
+      strokeLinecap: 'round',
+    }))
+    : null;
+  const lines = (componentLines || placed.flatMap(([x, y, char], index) => markSegments(x, y, char).map(([x1, y1, x2, y2], segment) => ({
     key: `${index}-${segment}-${x}-${y}`,
     x1,
     y1,
@@ -433,12 +902,19 @@ function RunePreview({ placements }) {
     stroke: 'currentColor',
     strokeWidth: 0.13,
     strokeLinecap: 'round',
-  })));
+  })))).filter((line, index, all) => {
+    const endpoints = [[line.x1, line.y1], [line.x2, line.y2]].sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+    const key = endpoints.flat().join(',');
+    return all.findIndex((candidate) => {
+      const candidateEndpoints = [[candidate.x1, candidate.y1], [candidate.x2, candidate.y2]].sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+      return candidateEndpoints.flat().join(',') === key;
+    }) === index;
+  });
   const xs = lines.flatMap((line) => [line.x1, line.x2]);
   const ys = lines.flatMap((line) => [line.y1, line.y2]);
   const margin = 0.8;
   const viewBox = `${Math.min(...xs) - margin} ${Math.min(...ys) - margin} ${Math.max(...xs) - Math.min(...xs) + margin * 2} ${Math.max(...ys) - Math.min(...ys) + margin * 2}`;
-  return <svg className="flicker right" viewBox={viewBox} role="img" aria-label="Generated bindrune" style={{ width: '100%', height: 220 }}><g stroke="none" fill="#000000"  >{lines.map((line) => <line {...line} />)}</g></svg>;
+  return <svg className="flicker right" viewBox={viewBox} role="img" aria-label="Generated bindrune" style={{ width: '100%', height: 220 }}><g stroke="currentColor" fill="none">{lines.map((line) => <line {...line} />)}</g></svg>;
 }
 
 export default function BindruneGenerator({ str }) {
